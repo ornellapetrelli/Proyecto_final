@@ -1,0 +1,74 @@
+.flight-selection-container {
+  padding-top: 80px; 
+  padding-bottom: 40px; 
+}
+
+.search-details {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.edit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.table {
+  margin-top: 2rem;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table td button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .search-details p {
+    font-size: 0.9rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.9rem;
+  }
+
+  .edit-button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-details p {
+    font-size: 0.8rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.8rem;
+  }
+
+  .edit-button {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-details p {
+    font-size: 0.7rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.7rem;
+  }
+
+  .edit-button {
+    font-size: 0.6rem;
+  }
+}

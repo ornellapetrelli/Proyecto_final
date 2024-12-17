@@ -1,0 +1,100 @@
+body {
+    background-color: #e9f3f9;
+    color: #004c80;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1.text-center {
+    color: #006f9c;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .reset-password-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .form-floating .form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #006f9c;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  button[type="submit"] {
+    background-color: #006f9c;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005b7f;
+  }
+  
+  .alert {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    .reset-password-form {
+      padding: 1.5rem;
+    }
+  
+    h1.text-center {
+      font-size: 2rem;
+    }
+  
+    .form-floating .form-control {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  
+    button[type="submit"] {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  
+    .alert {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .reset-password-form {
+      padding: 1rem;
+    }
+  
+    h1.text-center {
+      font-size: 1.75rem;
+    }
+  
+    .form-floating .form-control {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+  
+    button[type="submit"] {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .alert {
+      font-size: 0.8rem;
+    }
+  }
+  

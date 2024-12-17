@@ -1,0 +1,16 @@
+# Ignorar node_modules
+node_modules/
+# Ignorar archivos de entorno
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+# Ignorar dependencias lock
+package-lock.json
+yarn.lock
+# Permitir frontEnd/package-lock.json
+!frontEnd/package-lock.json
+# Ignorar cachés
+.DS_Store
+.cache/

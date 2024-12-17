@@ -1,0 +1,152 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    width: 100%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+.footer-top {
+    background-color: #00aaff;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.footer-top h1,
+.footer-top p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+.footer-title {
+    background-color: #80d0ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.footer-section h3 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.footer-section h3 a:hover {
+    color: #0077b6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin: 8px 0;
+    color: #0077b6;
+    font-size: 1em;
+}
+
+
+.footer-bottom {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    color: #333333;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.subscribe p {
+    margin: 0;
+    color: #333333;
+    font-size: 1.2em;
+}
+
+.subscribe button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.subscribe button:hover {
+    background-color: #0077b6;
+}
+
+.footer .text-center {
+    background-color: #00aaff;
+    padding: 15px;
+    color: white;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer-bottom2 {
+    text-align: center;
+    background-color: #0077b6;
+    margin-top: 10px;
+    padding: 13px 0;
+    font-size: 1em;
+    color: white;
+}
+
+@media (min-width: 1025px) {
+    .footer-section {
+        width: 22%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

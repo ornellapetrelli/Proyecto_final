@@ -1,0 +1,129 @@
+body {
+    background-color: #e9f3f9;
+    color: #004c80;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1.text-center {
+    color: #006f9c;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .historial-page {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 100px auto 20px;
+    flex: 1;
+  }
+  
+  .historial-page h1 {
+    color: #006f9c;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .historial-page p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .no-flights-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .flights-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .flight-item {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .flight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .flight-item p {
+    margin: 0.5rem 0;
+  }
+  
+  .flight-item p strong {
+    color: #006f9c;
+  }
+  
+  .btn-details {
+    background-color: #006f9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-details:hover {
+    background-color: #005b7f;
+  }
+
+  @media (max-width: 480px) {
+    .historial-page {
+      padding: 1.5rem;
+    }
+  
+    .historial-page h1 {
+      font-size: 2rem;
+    }
+  
+    .flight-item {
+      padding: 1rem;
+    }
+  
+    .flight-item p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .historial-page {
+      padding: 1rem;
+    }
+  
+    .historial-page h1 {
+      font-size: 1.75rem;
+    }
+  
+    .flight-item {
+      padding: 0.75rem;
+    }
+  
+    .flight-item p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  body::after {
+    content: "";
+    display: block;
+    height: 150px;
+  }
+  
