@@ -7,4 +7,5 @@ router.post('/generate-random-flights', insertRandomFlights);
 
 router.get('/flights', getFlights);
 //router.post('/enviar-correo', VuelosController.handlePayment);
+router.post('/flights', getFlights);
 export default router;

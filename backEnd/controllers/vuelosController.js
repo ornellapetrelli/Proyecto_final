@@ -22,13 +22,23 @@ const airports = [
   { code: 'VDM', name: 'Gobernador Castello (Viedma)' },
 ];
 
-function getRandomDate() {
+function getRandomDate(monthRange = 4) {
   const startDate = new Date();
   const endDate = new Date(startDate);
-  endDate.setMonth(startDate.getMonth() + 4);
+  endDate.setMonth(startDate.getMonth() + monthRange);
   const randomTimestamp = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
-  return new Date(randomTimestamp);
+
+  const randomDate = new Date(randomTimestamp);
+
+  const year = randomDate.getFullYear();
+  const month = (randomDate.getMonth() + 1).toString().padStart(2, '0'); 
+  const day = randomDate.getDate().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day}`; 
+  console.log('${year}${month}-${day}');
 }
+
+
 
 function generateRandomFlight() {
   const departureAirport = airports[Math.floor(Math.random() * airports.length)];
@@ -37,10 +47,13 @@ function generateRandomFlight() {
   while (departureAirport.code === destinationAirport.code) {
     destinationAirport = airports[Math.floor(Math.random() * airports.length)];
   }
+  const hours = Math.floor(Math.random() * 24); 
+  const minutes = Math.floor(Math.random() * 60);
+  const formattedHour = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 
   return new Vuelo({
-    fechaVuelo: getRandomDate(),
-    horario: `${Math.floor(Math.random() * 12) + 1}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')} ${Math.random() > 0.5 ? 'AM' : 'PM'}`,
+    fechaVuelo: getRandomDate(), 
+    horario: formattedHour,  
     codigoVuelo: `FL${Math.floor(Math.random() * 9000) + 1000}`,
     lugarPartida: departureAirport.name,
     lugarDestino: destinationAirport.name,
@@ -57,26 +70,30 @@ function generateRandomFlight() {
   });
 }
 
-export async function insertRandomFlights(res) {
+
+export async function insertRandomFlights(req, res) {
   try {
+    const numVuelos = req.query.numVuelos || 5;
     const vuelos = [];
-    for (let i = 0; i < 10; i++) {
-      vuelos.push(generateRandomFlight());
+    
+    for (let i = 0; i < numVuelos; i++) {
+      vuelos.push(generateRandomFlight());  
     }
 
     await Vuelo.insertMany(vuelos);
-    res.status(200).json({ message: 'Vuelos aleatorios insertados con éxito.' });
+    res.status(200).json({ message: `${numVuelos} vuelos aleatorios insertados con éxito.` });
   } catch (err) {
     console.error('Error al insertar vuelos:', err);
     res.status(500).json({ error: 'Error al insertar los vuelos. Intenta nuevamente.' });
   }
 }
 
+
 export const getFlights = async (req, res) => {
   console.log('Solicitud recibida en la ruta /api/vuelos/flights');
-  console.log('Parámetros recibidos:', req.query);
+  console.log('Cuerpo de la solicitud:', req.body);
 
-  const { origin, destination, departureDate, returnDate } = req.query;
+  const { origin, destination, departureDate, returnDate } = req.body; 
 
   if (!origin || !destination) {
     console.log('Faltan parámetros "origin" o "destination"');
